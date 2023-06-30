@@ -21,7 +21,7 @@
         }
     ],
     "require": {
-        "ufo/mpdf": "^8.1.6"
+        "ufo/mpdf": "dev-development"
     },
     "autoload": {
         "psr-4": {
