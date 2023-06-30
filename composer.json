@@ -38,5 +38,6 @@
             "type": "vcs",
             "url": "https://github.com/mykolastepanenko/mpdf.git"
         }
-    ]
+    ],
+    "minimum-stability": "dev"
 }
