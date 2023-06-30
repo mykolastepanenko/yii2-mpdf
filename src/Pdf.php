@@ -6,9 +6,9 @@
  * @version 1.0.7
  */
 
-namespace kartik\mpdf;
+namespace UFO\Yii2\Mpdf;
 
-use Mpdf\Mpdf;
+use UFO\Mpdf\Mpdf;
 use Mpdf\MpdfException;
 use setasign\Fpdi\PdfParser\CrossReference\CrossReferenceException;
 use setasign\Fpdi\PdfParser\PdfParserException;
@@ -317,7 +317,7 @@ class Pdf extends Component
     /**
      * Adds a PDF attachment to the generated PDF
      *
-     * @param  string  $filePath
+     * @param string $filePath
      */
     public function addPdfAttachment($filePath)
     {
@@ -327,8 +327,8 @@ class Pdf extends Component
     /**
      * Calls the Mpdf method with parameters
      *
-     * @param  string  $method  the Mpdf method / function name
-     * @param  array  $params  the Mpdf parameters
+     * @param string $method the Mpdf method / function name
+     * @param array $params the Mpdf parameters
      *
      * @return mixed
      * @throws InvalidConfigException
@@ -349,10 +349,10 @@ class Pdf extends Component
     /**
      * Generates a PDF output
      *
-     * @param  string  $content  the input HTML content
-     * @param  string  $file  the name of the file. If not specified, the document will be sent to the browser inline
+     * @param string $content the input HTML content
+     * @param string $file the name of the file. If not specified, the document will be sent to the browser inline
      * (i.e. [[DEST_BROWSER]]).
-     * @param  string  $dest  the output destination. Defaults to [[DEST_BROWSER]].
+     * @param string $dest the output destination. Defaults to [[DEST_BROWSER]].
      *
      * @return string
      * @throws InvalidConfigException
@@ -402,13 +402,13 @@ class Pdf extends Component
         $headers->set('Cache-Control', 'public, must-revalidate, max-age=0');
         $headers->set('Pragma', 'public');
         $headers->set('Expires', 'Sat, 26 Jul 1997 05:00:00 GMT');
-        $headers->set('Last-Modified', gmdate('D, d M Y H:i:s').' GMT');
+        $headers->set('Last-Modified', gmdate('D, d M Y H:i:s') . ' GMT');
         if (empty($_SERVER['HTTP_ACCEPT_ENCODING'])) {
             // do not use length if server is using compression
             $headers->set('Content-Length', strlen($output));
         }
         $type = $dest == self::DEST_BROWSER ? 'inline; ' : 'attachment; ';
-        $headers->set('Content-Disposition', $type.'filename="'.$file.'"');
+        $headers->set('Content-Disposition', $type . 'filename="' . $file . '"');
 
         return $output;
     }
@@ -419,7 +419,7 @@ class Pdf extends Component
     public function parseFormat()
     {
         $landscape = self::ORIENT_LANDSCAPE;
-        $tag = '-'.$landscape;
+        $tag = '-' . $landscape;
         if ($this->orientation == $landscape && is_string($this->format) && substr($this->format, -2) != $tag) {
             $this->format .= $tag;
         }
@@ -428,8 +428,8 @@ class Pdf extends Component
     /**
      * Appends the given attachment to the generated PDF
      *
-     * @param  Mpdf  $api  the Mpdf API instance
-     * @param  string  $attachment  the attachment name
+     * @param Mpdf $api the Mpdf API instance
+     * @param string $attachment the attachment name
      * @throws CrossReferenceException
      * @throws PdfParserException
      * @throws PdfTypeException
