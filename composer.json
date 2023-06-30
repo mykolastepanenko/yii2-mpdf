@@ -21,16 +21,22 @@
         }
     ],
     "require": {
-        "misterspelik/mpdf": "^8.1.6"
+        "ufo/mpdf": "^8.1.6"
     },
     "autoload": {
         "psr-4": {
-            "ufo\\mpdf\\": "src"
+            "UFO\\Yii2\\Mpdf\\": "src"
         }
     },
     "extra": {
         "branch-alias": {
             "dev-master": "1.0.x-dev"
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/mykolastepanenko/mpdf.git"
+        }
+    ]
 }
