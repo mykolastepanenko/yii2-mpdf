@@ -9,7 +9,7 @@
 namespace UFO\Yii2\Mpdf;
 
 use UFO\Mpdf\Mpdf;
-use Mpdf\MpdfException;
+use UFO\Mpdf\MpdfException;
 use setasign\Fpdi\PdfParser\CrossReference\CrossReferenceException;
 use setasign\Fpdi\PdfParser\PdfParserException;
 use setasign\Fpdi\PdfParser\Type\PdfTypeException;
